@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - '12'
+services:
+  - mongodb
+branches:
+  only:
+    - master
+    - dev
+env:
+  global:
+    - PORT=3000
+    - MONGODB_URL=mongodb://localhost:27017/blue-origin-x-team-i
+script:
+  - npm run lint
+  - npm run test
+after_success: npm run coverage:coveralls
