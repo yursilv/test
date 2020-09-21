@@ -13,6 +13,7 @@ env:
     - MONGODB_URL=mongodb://localhost:27017/blue-origin-x-team-i
 script:
   - cd server
+  - npm install
   - npm run lint
   - npm run test
 after_success: npm run coverage:coveralls
